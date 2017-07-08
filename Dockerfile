@@ -1,10 +1,10 @@
-FROM debian:latest
+FROM resin/rpi-raspbian:jessie
 
 MAINTAINER info@jeedom.com
 
 ENV SHELL_ROOT_PASSWORD Mjeedom96
 
-RUN apt-get update && apt-get install -y wget openssh-server supervisor mysql-client
+RUN apt-get update && apt-get install -y wget openssh-server supervisor mysql-client iproute iputils-ping
 
 RUN echo "root:${SHELL_ROOT_PASSWORD}" | chpasswd && \
   sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
