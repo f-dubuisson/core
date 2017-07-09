@@ -23,5 +23,6 @@ chmod 777 /dev/tty*
 chmod 777 -R /tmp
 chmod 755 -R /var/www/html
 chown -R www-data:www-data /var/www/html
+touch /etc/cron.d/jeedom
 
 /usr/bin/supervisord

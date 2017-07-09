@@ -276,7 +276,7 @@ step_10_jeedom_post() {
 		
   	fi
 	if [ ! -f /etc/cron.d/jeedom ]; then
-		echo "* * * * *	www-data	/usr/bin/php ${WEBSERVER_HOME}/core/php/jeeCron.php >> /dev/null" > /etc/cron.d/jeedom
+		echo "* * * * *	www-data	/usr/bin/php ${WEBSERVER_HOME}/core/php/jeeCron.php" > /etc/cron.d/jeedom
 		if [ $? -ne 0 ]; then
 	    	echo "${ROUGE}Could not install jeedom cron - abort${NORMAL}"
 	    	exit 1
